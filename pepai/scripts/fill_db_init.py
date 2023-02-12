@@ -1,22 +1,22 @@
 """Script to fill the database after install."""
 import argparse
 
-from airsenal.framework.schema import clean_database, database_is_empty, session_scope
-from airsenal.framework.season import CURRENT_SEASON, sort_seasons
-from airsenal.framework.transaction_utils import fill_initial_squad
-from airsenal.framework.utils import get_past_seasons
-from airsenal.scripts.fill_absence_table import make_absence_table
-from airsenal.scripts.fill_fifa_ratings_table import make_fifa_ratings_table
-from airsenal.scripts.fill_fixture_table import make_fixture_table
-from airsenal.scripts.fill_player_attributes_table import make_attributes_table
-from airsenal.scripts.fill_player_table import make_player_table
-from airsenal.scripts.fill_playerscore_table import make_playerscore_table
-from airsenal.scripts.fill_result_table import make_result_table
-from airsenal.scripts.fill_team_table import make_team_table
+from pepai.framework.schema import clean_database, database_is_empty, session_scope
+from pepai.framework.season import CURRENT_SEASON, sort_seasons
+from pepai.framework.transaction_utils import fill_initial_squad
+from pepai.framework.utils import get_past_seasons
+from pepai.scripts.fill_absence_table import make_absence_table
+from pepai.scripts.fill_fifa_ratings_table import make_fifa_ratings_table
+from pepai.scripts.fill_fixture_table import make_fixture_table
+from pepai.scripts.fill_player_attributes_table import make_attributes_table
+from pepai.scripts.fill_player_table import make_player_table
+from pepai.scripts.fill_playerscore_table import make_playerscore_table
+from pepai.scripts.fill_result_table import make_result_table
+from pepai.scripts.fill_team_table import make_team_table
 
 
 def check_clean_db(clean, dbsession):
-    """Check whether an AIrsenal database already exists. If clean is True attempt to
+    """Check whether an pepai database already exists. If clean is True attempt to
     delete any pre-existing database first. Returns True if database exists and is not
     empty.
     """
@@ -59,7 +59,7 @@ def main():
     )
     parser.add_argument(
         "--clean",
-        help="If set, delete and re-create any pre-existing AIrsenal database",
+        help="If set, delete and re-create any pre-existing pepai database",
         action="store_true",
     )
     parser.add_argument(
@@ -87,7 +87,7 @@ def main():
             make_init_db(args.fpl_team_id, seasons, dbsession)
         else:
             print(
-                "AIrsenal database already exists. "
-                "Run 'airsenal_setup_initial_db --clean' to delete and recreate it,\n"
-                "or keep the current database and continue to 'airsenal_update_db'."
+                "pepai database already exists. "
+                "Run 'pepai_setup_initial_db --clean' to delete and recreate it,\n"
+                "or keep the current database and continue to 'pepai_update_db'."
             )

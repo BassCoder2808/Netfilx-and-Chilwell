@@ -4,9 +4,9 @@ from datetime import datetime
 import pandas as pd
 from tqdm import tqdm
 
-from airsenal.framework.schema import Absence, session
-from airsenal.framework.season import CURRENT_SEASON, sort_seasons
-from airsenal.framework.utils import (
+from pepai.framework.schema import Absence, session
+from pepai.framework.season import CURRENT_SEASON, sort_seasons
+from pepai.framework.utils import (
     get_next_gameweek_by_date,
     get_past_seasons,
     get_player,

@@ -6,11 +6,11 @@ Fill the "Player" table with info from this and past seasonss FPL
 import json
 import os
 
-from airsenal.framework.data_fetcher import FPLDataFetcher
-from airsenal.framework.schema import Player, PlayerMapping, session, session_scope
-from airsenal.framework.season import CURRENT_SEASON, sort_seasons
-from airsenal.framework.utils import get_past_seasons
-from airsenal.scripts.fill_player_mappings_table import (
+from pepai.framework.data_fetcher import FPLDataFetcher
+from pepai.framework.schema import Player, PlayerMapping, session, session_scope
+from pepai.framework.season import CURRENT_SEASON, sort_seasons
+from pepai.framework.utils import get_past_seasons
+from pepai.scripts.fill_player_mappings_table import (
     add_mappings,
     make_player_mappings_table,
 )

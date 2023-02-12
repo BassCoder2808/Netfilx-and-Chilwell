@@ -8,11 +8,11 @@ Fill the "fixture" table with info from this seasons FPL
 import os
 import uuid
 
-from airsenal.framework.data_fetcher import FPLDataFetcher
-from airsenal.framework.mappings import alternative_team_names
-from airsenal.framework.schema import Fixture, session, session_scope
-from airsenal.framework.season import CURRENT_SEASON, sort_seasons
-from airsenal.framework.utils import find_fixture, get_past_seasons
+from pepai.framework.data_fetcher import FPLDataFetcher
+from pepai.framework.mappings import alternative_team_names
+from pepai.framework.schema import Fixture, session, session_scope
+from pepai.framework.season import CURRENT_SEASON, sort_seasons
+from pepai.framework.utils import find_fixture, get_past_seasons
 
 
 def fill_fixtures_from_file(filename, season, dbsession=session):

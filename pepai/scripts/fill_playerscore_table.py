@@ -7,10 +7,10 @@ Fill the "player_score" table with historic results
 import json
 import os
 
-from airsenal.framework.data_fetcher import FPLDataFetcher
-from airsenal.framework.schema import PlayerScore, session, session_scope
-from airsenal.framework.season import CURRENT_SEASON, sort_seasons
-from airsenal.framework.utils import (
+from pepai.framework.data_fetcher import FPLDataFetcher
+from pepai.framework.schema import PlayerScore, session, session_scope
+from pepai.framework.season import CURRENT_SEASON, sort_seasons
+from pepai.framework.utils import (
     NEXT_GAMEWEEK,
     find_fixture,
     get_past_seasons,

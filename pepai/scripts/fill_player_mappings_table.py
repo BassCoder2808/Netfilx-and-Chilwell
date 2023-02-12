@@ -4,7 +4,7 @@ Fill the "PlayerMapping" table with alternative names for players
 import csv
 import os
 
-from airsenal.framework.schema import Player, PlayerMapping
+from pepai.framework.schema import Player, PlayerMapping
 
 
 def load_mappings_data():

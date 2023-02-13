@@ -5,8 +5,8 @@ variable, or a file named FPL_TEAM_ID in airsenal/data/
 """
 from sqlalchemy import and_, or_
 
-from airsenal.framework.schema import Transaction
-from airsenal.framework.utils import (
+from pepai.framework.schema import Transaction
+from pepai.framework.utils import (
     CURRENT_SEASON,
     NEXT_GAMEWEEK,
     fetcher,

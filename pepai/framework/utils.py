@@ -15,8 +15,8 @@ import requests
 from dateutil.parser import isoparse
 from sqlalchemy import case, desc, or_
 
-from airsenal.framework.data_fetcher import FPLDataFetcher
-from airsenal.framework.schema import (
+from pepai.framework.data_fetcher import FPLDataFetcher
+from pepai.framework.schema import (
     Absence,
     Fixture,
     Player,
@@ -28,7 +28,7 @@ from airsenal.framework.schema import (
     Transaction,
     session,
 )
-from airsenal.framework.season import CURRENT_SEASON
+from pepai.framework.season import CURRENT_SEASON
 
 fetcher = FPLDataFetcher()  # in global scope so it can keep cached data
 

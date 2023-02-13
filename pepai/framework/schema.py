@@ -8,7 +8,7 @@ from sqlalchemy import Column, Float, ForeignKey, Integer, String, create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship, sessionmaker
 
-from airsenal.framework.env import AIRSENAL_HOME, get_env
+from pepai.framework.env import AIRSENAL_HOME, get_env
 
 Base = declarative_base()
 

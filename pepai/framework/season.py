@@ -6,7 +6,7 @@ Season details
 from datetime import datetime
 from typing import List
 
-from airsenal.framework.schema import Team, session
+from pepai.framework.schema import Team, session
 
 
 def get_current_season():

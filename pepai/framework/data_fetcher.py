@@ -8,7 +8,7 @@ import time
 
 import requests
 
-from airsenal.framework.env import get_env, save_env
+from pepai.framework.env import get_env, save_env
 
 API_HOME = "https://fantasy.premierleague.com/api"
 
@@ -81,7 +81,7 @@ class FPLDataFetcher(object):
     def get_fpl_credentials(self):
         """
         If we didn't have FPL_LOGIN and FPL_PASSWORD available as files in
-        AIRSENAL_HOME or as environment variables, prompt the user for them.
+        pepai_HOME or as environment variables, prompt the user for them.
         """
         print(
             """
@@ -120,10 +120,10 @@ class FPLDataFetcher(object):
                 do_login = input(
                     (
                         "\nWould you like to login to the FPL API?"
-                        "\nThis is not necessary for most AIrsenal actions, "
+                        "\nThis is not necessary for most pepai actions, "
                         "\nbut may improve accuracy of player sell values,"
                         "\nand free transfers for your team, and will also "
-                        "\nenable AIrsenal to make transfers for you through "
+                        "\nenable pepai to make transfers for you through "
                         "\nthe API. (y/n): "
                     )
                 )

@@ -338,7 +338,7 @@ def get_bank(
     Find out how much this FPL team had in the bank before the specified gameweek.
     If gameweek is not provided, give the most recent value
     If fpl_team_id is not specified, will use the FPL_TEAM_ID environment var, or
-    the contents of the file airsenal/data/FPL_TEAM_ID.
+    the contents of the file pepai/data/FPL_TEAM_ID.
     """
     if season == CURRENT_SEASON:
         # we will use the API to estimate the bank
@@ -388,7 +388,7 @@ def get_free_transfers(
     Work out how many free transfers this FPL team should have before specified gameweek
     If gameweek is not provided, give the most recent value
     If fpl_team_id is not specified, will use the FPL_TEAM_ID environment var, or
-    the contents of the file airsenal/data/FPL_TEAM_ID.
+    the contents of the file pepai/data/FPL_TEAM_ID.
     """
     if season == CURRENT_SEASON:
         # we will use the API to estimate num transfers

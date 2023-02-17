@@ -1,7 +1,7 @@
 """
 Functions to help fill the Transaction table, where players are bought and sold,
 hopefully with the correct price.  Needs FPL_TEAM_ID to be set, either via environment
-variable, or a file named FPL_TEAM_ID in airsenal/data/
+variable, or a file named FPL_TEAM_ID in pepai/data/
 """
 from sqlalchemy import and_, or_
 
@@ -129,7 +129,7 @@ def add_transaction(
 
 def fill_initial_squad(
     season=CURRENT_SEASON,
-    tag="AIrsenal" + CURRENT_SEASON,
+    tag="PepAI" + CURRENT_SEASON,
     fpl_team_id=None,
     dbsession=session,
 ):
@@ -192,7 +192,7 @@ def fill_initial_squad(
 
 def update_squad(
     season=CURRENT_SEASON,
-    tag="AIrsenal" + CURRENT_SEASON,
+    tag="PepAI" + CURRENT_SEASON,
     fpl_team_id=None,
     dbsession=session,
     verbose=True,

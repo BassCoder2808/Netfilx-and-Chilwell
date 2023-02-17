@@ -8,7 +8,7 @@ from sqlalchemy import Column, Float, ForeignKey, Integer, String, create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship, sessionmaker
 
-from pepai.framework.env import AIRSENAL_HOME, get_env
+from pepai.framework.env import PEPAI_HOME, get_env
 
 Base = declarative_base()
 
@@ -400,14 +400,14 @@ class SessionBudget(Base):
 
 
 def get_connection_string():
-    if get_env("AIRSENAL_DB_FILE") and get_env("AIRSENAL_DB_URI"):
+    if get_env("PEPAI_DB_FILE") and get_env("PEPAI_DB_URI"):
         raise RuntimeError(
-            "Please choose only ONE of AIRSENAL_DB_FILE and AIRSENAL_DB_URI"
+            "Please choose only ONE of PEPAI_DB_FILE and PEPAI_DB_URI"
         )
 
-    # postgres database specified by: AIRSENAL_DB{_URI, _USER, _PASSWORD}
-    if get_env("AIRSENAL_DB_URI"):
-        keys = ["AIRSENAL_DB_URI", "AIRSENAL_DB_USER", "AIRSENAL_DB_PASSWORD"]
+    # postgres database specified by: PEPAI_DB{_URI, _USER, _PASSWORD}
+    if get_env("PEPAI_DB_URI"):
+        keys = ["PEPAI_DB_URI", "PEPAI_DB_USER", "PEPAI_DB_PASSWORD"]
         params = {}
         for k in keys:
             if value := get_env(k):
@@ -416,13 +416,13 @@ def get_connection_string():
                 raise KeyError(f"{k} must be defined when using a postgres database")
 
         return (
-            f"postgres://{params['AIRSENAL_DB_USER']}:"
-            f"{params['AIRSENAL_DB_PASSWORD']}@{params['AIRSENAL_DB_URI']}/airsenal"
+            f"postgres://{params['PEPAI_DB_USER']}:"
+            f"{params['PEPAI_DB_PASSWORD']}@{params['PEPAI_DB_URI']}/pepai"
         )
 
-    # sqlite database in a local file with path specified by AIRSENAL_DB_FILE,
-    # or AIRSENAL_HOME / data.db by default
-    return f"sqlite:///{get_env('AIRSENAL_DB_FILE', default=AIRSENAL_HOME / 'data.db')}"
+    # sqlite database in a local file with path specified by PEPAI_DB_FILE,
+    # or PEPAI_HOME / data.db by default
+    return f"sqlite:///{get_env('PEPAI_DB_FILE', default=PEPAI_HOME / 'data.db')}"
 
 
 def get_session():

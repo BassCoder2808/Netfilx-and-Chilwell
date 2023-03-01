@@ -8,19 +8,19 @@ import pytest
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-from airsenal.framework import env
+from pepai.framework import env
 
-env.AIRSENAL_HOME = Path(mkdtemp())
+env.PEPAI_HOME = Path(mkdtemp())
 
-from airsenal.framework.mappings import alternative_team_names  # noqa: E402
-from airsenal.framework.schema import Base, Player, PlayerAttributes  # noqa: E402
-from airsenal.framework.utils import CURRENT_SEASON  # noqa: E402
-from airsenal.tests.resources import dummy_players  # noqa: E402
+from pepai.framework.mappings import alternative_team_names  # noqa: E402
+from pepai.framework.schema import Base, Player, PlayerAttributes  # noqa: E402
+from pepai.framework.utils import CURRENT_SEASON  # noqa: E402
+from pepai.tests.resources import dummy_players  # noqa: E402
 
 API_SESSION_ID = "TESTSESSION"
 TEST_PAST_SEASON = "2021"
 
-testengine_dummy = create_engine(f"sqlite:///{env.AIRSENAL_HOME}/test.db")
+testengine_dummy = create_engine(f"sqlite:///{env.PEPAI_HOME}/test.db")
 
 testengine_past = create_engine(
     f"sqlite:///{os.path.dirname(__file__)}/tests/testdata/testdata_1718_1819.db"

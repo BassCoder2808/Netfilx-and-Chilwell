@@ -1,0 +1,27 @@
+name: Issue Accepted Workflow
+on:
+  issues:
+    types:
+      - labeled
+
+jobs:
+  generate_files:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check if issue labels are changed to "accepted"
+        id: check_labels
+        uses: actions/github-script@v4
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const issue = context.payload.issue;
+            const labels = issue.labels.map(label => label.name);
+            const hasAcceptedLabel = labels.includes("accepted");
+            return { hasAcceptedLabel }
+
+      - name: Generate .txt and .xml files
+        if: steps.check_labels.outputs.hasAcceptedLabel
+        run: |
+          # Add your code here to run the task once the issue is labeled as "accepted"
+          echo "Task triggered!"

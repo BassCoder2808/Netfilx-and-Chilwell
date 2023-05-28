@@ -38,7 +38,7 @@ jobs:
         if: ${{ steps.check_labels.outputs.hasAcceptedLabel == 'true' }}
         run: |
           # Add your code here to run the task once the issue is labeled as "accepted"
-          python issueAccepted.py steps.check_labels.outputs.hasAcceptedLabel
+          python issueAccepted.py ${{ steps.check_labels.outputs.hasAcceptedLabel }}
           echo "Task triggered! ${{steps.check_labels.outputs.hasAcceptedValue}}"
           echo "The output value is ${{ steps.check_labels.outputs.hasAcceptedLabel }}"
           echo "::set-output name=myOutput::Hello Vedant!!!!"

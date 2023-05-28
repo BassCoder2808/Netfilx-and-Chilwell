@@ -22,9 +22,10 @@ jobs:
 
       - name: Generate .txt and .xml files
         id: step1
+        if: steps.check_labels.outputs.result
         run: |
           # Add your code here to run the task once the issue is labeled as "accepted"
-          echo "Task triggered! ${{steps.check_labels.outputs.result.hasAcceptedLabel}}"
+          echo "Task triggered! ${{steps.check_labels.outputs.result}}"
           echo "::set-output name=myOutput::Hello, World!"
 
       - name: Use output value

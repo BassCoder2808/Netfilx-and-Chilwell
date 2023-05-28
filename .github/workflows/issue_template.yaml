@@ -18,7 +18,7 @@ jobs:
             const issue = context.payload.issue;
             const labels = issue.labels.map(label => label.name);
             const hasAcceptedLabel = labels.includes("new license/exception: Accepted");
-            return { hasAcceptedLabels }
+            return { hasAcceptedLabel }
 
       - name: Generate .txt and .xml files
         id: step1

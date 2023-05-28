@@ -39,4 +39,4 @@ if __name__ == "__main__":
     # Process command-line parameters
     arg1 = arguments[0]
     arg2 = arguments[1]
-    get_issue_contents(arg1, arg2)
+    get_issue_contents(1550, arg2)

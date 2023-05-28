@@ -18,7 +18,7 @@ jobs:
             const issue = context.payload.issue;
             const labels = issue.labels.map(label => label.name);
             const hasAcceptedLabel = labels.includes("new license/exception: Accepted");
-            process.env.LABEL_VALUE = hasAcceptedLabel;
+            console.log(`::set-output name=hasAcceptedLabel::${hasAcceptedLabel}`);
             return { hasAcceptedLabel }
 
       - name: Generate .txt and .xml files
@@ -27,7 +27,7 @@ jobs:
         run: |
           # Add your code here to run the task once the issue is labeled as "accepted"
           echo "Task triggered! ${{steps.check_labels.outputs.hasAcceptedValue}}"
-          echo {LABEL_VALUE}
+          echo "The output value is ${{ steps.check_labels.outputs.hasAcceptedLabel }}"
           echo "::set-output name=myOutput::Hello, World!"
 
       - name: Use output value

@@ -24,7 +24,7 @@ jobs:
         id: step1
         run: |
           # Add your code here to run the task once the issue is labeled as "accepted"
-          echo "Task triggered! {{steps.check_labels.outputs.result}}"
+          echo "Task triggered! ${{steps.check_labels.outputs.result}}"
           echo "::set-output name=myOutput::Hello, World!"
 
       - name: Use output value

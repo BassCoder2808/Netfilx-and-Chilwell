@@ -22,6 +22,7 @@ jobs:
 
       - name: Generate .txt and .xml files
         id: step1
+        if: steps.check_labels.outputs.result.hasAcceptedLabel
         run: |
           # Add your code here to run the task once the issue is labeled as "accepted"
           echo "Task triggered! ${{steps.check_labels.outputs.result}}"

@@ -18,7 +18,7 @@ jobs:
             const issue = context.payload.issue;
             const labels = issue.labels.map(label => label.name);
             const hasAcceptedLabel = labels.includes("Accepted");
-            return { hasAcceptedLabel }
+            return { labels }
 
       - name: Generate .txt and .xml files
         id: step1

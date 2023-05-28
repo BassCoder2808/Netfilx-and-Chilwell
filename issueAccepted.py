@@ -28,11 +28,6 @@ def get_issue_contents(issue_id, access_token):
     else:
         print("Error occurred while retrieving the issue:", response.status_code, response.text)
 
-# Call the function with the desired issue ID
-issue_id = 123
-get_issue_contents(issue_id)
-
-
 if __name__ == "__main__":
     print("Hello from the outer side")
     # if we get here, all passed
